@@ -1,0 +1,33 @@
+<!--<p id="notice"><%= notice %></p>-->
+<div class="jumbotron">
+    <h1>Ruby Blog</h1>
+</div>
+  
+
+<table class='table table-striped'>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Body</th>
+      <th>Image</th>
+      <th colspan="5"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @posts.each do |post| %>
+      <tr>
+        <td><%= post.title %></td>
+        <td><%= post.body %></td>
+        <td><%= image_tag post.image_url(:small) if post.image? %></td>
+        <td><%= link_to 'Show', post, class: 'btn btn-info' %></td>
+        <td><%= link_to 'Edit', edit_post_path(post), class: 'btn btn-warning' %></td>
+        <td><%= link_to 'Destroy', post, class: 'btn btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Post', new_post_path, class: 'btn btn-primary' %>
