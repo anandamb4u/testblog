@@ -22,7 +22,7 @@
         <td><%= image_tag post.image_url(:small) if post.image? %></td>
         <td><%= link_to 'Show', post, class: 'btn btn-info' %></td>
         <td><%= link_to 'Edit', edit_post_path(post), class: 'btn btn-warning' %></td>
-        <td><%= link_to 'Destroy', post, class: 'btn btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Delete', post, class: 'btn btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
