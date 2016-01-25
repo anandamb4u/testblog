@@ -11,7 +11,7 @@
   </ul>
 </head>
 <body>
-<nav class="navbar navbar-inverse">
+<nav class="navbar navbar-default">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -29,13 +29,19 @@
   </div>
   <div class="collapse navbar-collapse" id ="main-nav-collapse">
   <ul class="nav navbar-nav navbar-right">
-       <li><%= link_to "Contact",about_path, class: "navbar-brand"%></li>
+       <li><%= link_to "About Us",about_path, class: "navbar-brand"%></li>
+        <li><%= link_to "Contact Us",new_contact_path, class: "navbar-brand"%></li>
   <!--<a class="nav navbar-right" href="/Contact">Contact Us</a>-->
 </div>
 </div>
 </nav>
 
+<div class=container>
+  <% flash.each do |key, value| %>
+        <div class="alert alert-<%= key %>"><%= value %></div>
+  <%end%>
   <%= yield %>
+</div>
 
 </body>
 </html>
