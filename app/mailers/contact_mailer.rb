@@ -4,6 +4,6 @@ class ContactMailer < ActionMailer::Base
        @name = name
        @email = email
        @body = body
-       mail(from: @email,subject: "Message from contact us")
+       mail(to:"anandamb4u@gmail.com",from:@email,subject: "Message from contact us")
    end
 end
